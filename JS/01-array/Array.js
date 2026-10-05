@@ -158,45 +158,60 @@
 // let names = priceFilter.map((obj) => obj.name);
 // console.log(names);
 
-let users = [
-  {
-    name: "Ali",
-    age: 22,
-    orders: [
-      { product: "Laptop", price: 120000 },
-      { product: "Mouse", price: 3000 },
-    ],
-  },
-  {
-    name: "Ahmed",
-    age: 17,
-    orders: [{ product: "Phone", price: 80000 }],
-  },
-  {
-    name: "Usman",
-    age: 25,
-    orders: [
-      { product: "Monitor", price: 45000 },
-      { product: "Keyboard", price: 7000 },
-    ],
-  },
+// let users = [
+//   {
+//     name: "Ali",
+//     age: 22,
+//     orders: [
+//       { product: "Laptop", price: 120000 },
+//       { product: "Mouse", price: 3000 },
+//     ],
+//   },
+//   {
+//     name: "Ahmed",
+//     age: 17,
+//     orders: [{ product: "Phone", price: 80000 }],
+//   },
+//   {
+//     name: "Usman",
+//     age: 25,
+//     orders: [
+//       { product: "Monitor", price: 45000 },
+//       { product: "Keyboard", price: 7000 },
+//     ],
+//   },
+// ];
+
+// let ageFilter = users.filter((obj) => obj.age > 18);
+// console.log(ageFilter);
+
+// let priceSum = ageFilter.map((obj) => {
+//   let cart = obj.orders;
+//   //   let total = 0;
+//   //   for (let i = 0; i < cart.length; i++) {
+//   //     total += cart[i].price;
+//   //   }
+//   let total = cart.reduce((prev, curr) => {
+//     return prev + curr.price;
+//   }, 0);
+//   return {
+//     name: obj.name,
+//     total: total,
+//   };
+// });
+// console.log(priceSum);
+
+let products = [
+  { name: "Laptop", price: 40000, stock: 5 },
+  { name: "Mouse", price: 2500, stock: 0 },
+  { name: "Keyboard", price: 5000, stock: 10 },
+  { name: "Monitor", price: 99999999, stock: 3 },
+  { name: "Headphones", price: 8000, stock: 0 },
 ];
 
-let ageFilter = users.filter((obj) => obj.age > 18);
-console.log(ageFilter);
-
-let priceSum = ageFilter.map((obj) => {
-  let cart = obj.orders;
-  //   let total = 0;
-  //   for (let i = 0; i < cart.length; i++) {
-  //     total += cart[i].price;
-  //   }
-  let total = cart.reduce((prev, curr) => {
-    return prev + curr.price;
-  }, 0);
-  return {
-    name: obj.name,
-    total: total,
-  };
-});
-console.log(priceSum);
+const inStockItems = products.filter((item) => item.stock > 0);
+console.log(inStockItems);
+const inStockItemsNames = inStockItems.map((item) => item.name);
+console.log(inStockItemsNames);
+const highPrice = products.find((item) => item.price = 40000);
+console.log(highPrice);
